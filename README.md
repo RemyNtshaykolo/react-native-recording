@@ -8,6 +8,7 @@ React Native audio recording module used for DSP with Android + iOS
 
 ```
 $ npm i react-native-recording
+$ react-native link react-native-recording
 ```
 
 ## Usage
@@ -36,19 +37,6 @@ Recording.start();
 // stop recording
 Recording.stop();
 listener.remove();
-```
-
-## Microphone request for iOS 10 and above
-
-As of iOS 10.0, you must declare an intention to access a microphone. Add *NSMicrophoneUsageDescription* key and declaration value in *Info.plist*.
-
-```
-<dict>
-    ...
-	<key>NSMicrophoneUsageDescription</key>
-	<string>This app uses the microphone to record the soundscape.</string>
-    ...
-</dict>
 ```
 
 [npm]: https://www.npmjs.com/package/react-native-recording

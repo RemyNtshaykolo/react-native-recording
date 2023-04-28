@@ -1,17 +1,13 @@
 module.exports = {
-  dependency: {
-    platforms: {
-      ios: { project: "lib/ios/react-native-recording.podspec" },
-      android: { sourceDir: "lib/android" }
-    }
-  },
   dependencies: {
     "react-native-recording": {
       root: __dirname,
       platforms: {
-        ios: { sourceDir: __dirname + "/lib/ios" },
+        ios: { 
+          sourceDir:   "./ios" 
+        },
         android: {
-          sourceDir: __dirname + "/lib/android",
+          sourceDir:  "./android",
           packageImportPath: "import cn.qiuxiang.react.recording.RecordingPackage;",
           packageInstance: "new RecordingPackage()"
         }
