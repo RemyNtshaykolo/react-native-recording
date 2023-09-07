@@ -20,13 +20,18 @@ void inputCallback(
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
+    AVAudioSession *session = AVAudioSession.sharedInstance;
     NSError *error = nil;
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    // [ audioSession setCategory:AVAudioSessionCategoryPlayAndRecord options:AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionAllowBluetooth];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord
+                    mode:AVAudioSessionModeVoiceChat
+                 options:AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionAllowBluetooth
+                   error:&error];
 
-    // if (error) {
-    //     NSLog(@"Erreur lors de la configuration de la session audio : %@", [error localizedDescription]);
-    // }
+
+     if (nil == error)
+    {
+        // continue here
+    }
 
     UInt32 bufferSize = options[@"bufferSize"] == nil ? 8192 : [options[@"bufferSize"] unsignedIntegerValue];
     _bufferSize = bufferSize;
