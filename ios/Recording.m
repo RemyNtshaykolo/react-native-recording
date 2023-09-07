@@ -23,9 +23,7 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
     NSError *error = nil;
         AVAudioSession *audioSession = [AVAudioSession sharedInstance];
         [ audioSession setCategory:AVAudioSessionCategoryPlayAndRecord
-                            mode:avMode
-                        options:AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionAllowBluetooth
-                            error:&error];
+        options:AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionAllowBluetooth];
 
     if (error) {
         NSLog(@"Erreur lors de la configuration de la session audio : %@", [error localizedDescription]);
