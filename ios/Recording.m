@@ -23,7 +23,8 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
     AVAudioSession *session = AVAudioSession.sharedInstance;
     NSError *error = nil;
     [session setCategory:AVAudioSessionCategoryPlayAndRecord
-                 options:AVAudioSessionCategoryOptionAllowBluetooth
+
+                 options:AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionAllowBluetooth
                    error:&error];
 
 
