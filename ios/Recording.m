@@ -22,9 +22,9 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
     AVAudioSession *session = AVAudioSession.sharedInstance;
     NSError *error = nil;
-    [session setCategory:AVAudioSessionCategoryRecord
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord
                     mode:AVAudioSessionModeMeasurement
-                 options:AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionMixWithOthers
+                 options:AVAudioSessionCategoryOptionDefaultToSpeaker
                    error:&error];
 
 
