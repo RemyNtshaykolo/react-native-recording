@@ -22,11 +22,11 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
     NSError *error = nil;
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    [ audioSession setCategory:AVAudioSessionCategoryPlayAndRecord options:AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionAllowBluetooth];
+    // [ audioSession setCategory:AVAudioSessionCategoryPlayAndRecord options:AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionAllowBluetooth];
 
-    if (error) {
-        NSLog(@"Erreur lors de la configuration de la session audio : %@", [error localizedDescription]);
-    }
+    // if (error) {
+    //     NSLog(@"Erreur lors de la configuration de la session audio : %@", [error localizedDescription]);
+    // }
 
     UInt32 bufferSize = options[@"bufferSize"] == nil ? 8192 : [options[@"bufferSize"] unsignedIntegerValue];
     _bufferSize = bufferSize;
