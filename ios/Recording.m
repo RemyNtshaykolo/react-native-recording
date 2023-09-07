@@ -26,7 +26,7 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
                     mode:AVAudioSessionModeMeasurement
                  options:AVAudioSessionCategoryOptionAllowBluetooth|AVAudioSessionCategoryOptionAllowBluetoothA2DP|AVAudioSessionCategoryOptionOverrideMutedMicrophoneInterruption|AVAudioSessionCategoryOptionDefaultToSpeaker
                    error:&error];
-    // [session setActive:YES error:nil];
+    [session setActive:YES error:nil];
 
 
      if (nil == error)
@@ -60,6 +60,7 @@ RCT_EXPORT_METHOD(start) {
 RCT_EXPORT_METHOD(stop) {
     [AVAudioSession.sharedInstance setActive:NO error:nil];
     AudioQueueStop(_queue, YES);
+    AudioQueueDispose(_queue, true);
 }
 
 - (void)processInputBuffer:(AudioQueueBufferRef)inBuffer queue:(AudioQueueRef)queue {
