@@ -24,7 +24,7 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
     NSError *error = nil;
     [session setCategory:AVAudioSessionCategoryPlayAndRecord
                     mode:AVAudioSessionModeMeasurement
-                 options:AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionAllowBluetooth|AVAudioSessionCategoryOptionAllowBluetoothA2DP
+                 options:AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionAllowBluetooth|AVAudioSessionCategoryOptionAllowBluetoothA2DP|AVAudioSessionCategoryOptionOverrideMutedMicrophoneInterruption
                    error:&error];
     // [session setActive:YES error:nil];
 
