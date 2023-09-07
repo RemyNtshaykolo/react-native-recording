@@ -22,7 +22,7 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
     AVAudioSession *session = AVAudioSession.sharedInstance;
     NSError *error = nil;
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord
+    [session setCategory:AVAudioSessionCategoryRecord
                     mode:AVAudioSessionModeVoiceChat
                  options:AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionAllowBluetoothA2DP
                    error:&error];
