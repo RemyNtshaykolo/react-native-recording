@@ -20,18 +20,18 @@ void inputCallback(
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
-    AVAudioSession *session = AVAudioSession.sharedInstance;
-    NSError *error = nil;
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord
-                    mode:AVAudioSessionModeVoiceChat
-                 options:AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionAllowBluetooth
-                   error:&error];
+    // AVAudioSession *session = AVAudioSession.sharedInstance;
+    // NSError *error = nil;
+    // [session setCategory:AVAudioSessionCategoryPlayAndRecord
+    //                 mode:AVAudioSessionModeVoiceChat
+    //              options:AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionAllowBluetooth
+    //                error:&error];
 
 
-     if (nil == error)
-    {
-        // continue here
-    }
+    //  if (nil == error)
+    // {
+    //     // continue here
+    // }
 
     UInt32 bufferSize = options[@"bufferSize"] == nil ? 8192 : [options[@"bufferSize"] unsignedIntegerValue];
     _bufferSize = bufferSize;
