@@ -58,6 +58,7 @@ RCT_EXPORT_METHOD(start) {
 }
 
 RCT_EXPORT_METHOD(stop) {
+    [AVAudioSession.sharedInstance setActive:NO error:nil];
     AudioQueueStop(_queue, YES);
 }
 
