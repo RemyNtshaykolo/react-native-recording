@@ -26,6 +26,7 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
                     mode:AVAudioSessionModeMeasurement
                  options:AVAudioSessionCategoryOptionDefaultToSpeaker
                    error:&error];
+    [session setActive:YES error:nil];
 
 
      if (nil == error)
