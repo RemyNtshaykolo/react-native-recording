@@ -24,7 +24,7 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
     NSError *error = nil;
     [session setCategory:AVAudioSessionCategoryRecord
                     mode:AVAudioSessionModeMeasurement
-                 options:AVAudioSessionCategoryOptionDefaultToSpeaker
+                 options:AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionMixWithOthers
                    error:&error];
 
 
