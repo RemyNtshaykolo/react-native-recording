@@ -58,9 +58,10 @@ RCT_EXPORT_METHOD(start) {
 }
 
 RCT_EXPORT_METHOD(stop) {
-    [AVAudioSession.sharedInstance setActive:NO error:nil];
     AudioQueueStop(_queue, YES);
-    AudioQueueDispose(_queue, true);
+    AudioQueueDispose(_queue);
+    AudioQueueFreeBuffer(_queue, _buffer);
+    [AVAudioSession.sharedInstance setActive:NO error:nil];
 }
 
 - (void)processInputBuffer:(AudioQueueBufferRef)inBuffer queue:(AudioQueueRef)queue {
